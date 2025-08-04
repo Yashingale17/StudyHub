@@ -1,0 +1,109 @@
+.desktopTabs {
+  display: flex;
+}
+
+.mobileDropdown {
+  display: none;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width:576px) {
+  .profileInfoBox {
+    width: 100%;
+    padding: 0;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .profileInfoContent {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .desktopTabs {
+    display: none;
+  }
+
+  .mobileDropdown {
+    display: block;
+  }
+}
+
+@media (min-width :991px) {
+
+  .container {
+    height: 290px;
+  }
+
+  .dashbg {
+    height: 220px;
+  }
+
+  .profile {
+    top: -141px;
+    padding-left: 40px;
+    flex-direction: row;
+    justify-content: start;
+    gap: 30px;
+  }
+
+  .profile .profileDiv {
+    height: 200px !important;
+    width: 200px !important;
+  }
+
+  .becomeInstructor2 {
+    color: white;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+
+  .becomeInstructor {
+    color: white;
+    margin-left: auto;
+    margin-right: 20px;
+    background-color: #6549ff;
+  }
+
+  .profileName {
+    color: white;
+    margin-bottom:30px ;
+  }   
+  .DashdoardLinks {
+    width: 25%;
+  }
+
+  .CountMain {
+    flex-direction: row;
+  }
+
+  .countContainer {
+    width: 50%;
+  }
+
+  .outluck {
+    width: 75%;
+  }
+
+  .ChangePass {
+    width: 58.3333%;
+  }
+}
+
+
+@media (min-width :1200px) {
+  .countContainer {
+    width: 33.3333%;
+  }
+
+  .countBox {
+    flex-direction: column;
+  }
+}

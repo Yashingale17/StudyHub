@@ -1,0 +1,48 @@
+.controlsWrapper {
+  display: flex;
+  justify-content: center;
+  /* center the group */
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+
+.arrow {
+  width: 100px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #553cdf;
+}
+
+@media (max-width: 766px) {
+  .arrow {
+    display: none !important;
+  }
+}
+a
+.arrow:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #553cdf;
+}

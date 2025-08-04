@@ -1,0 +1,84 @@
+@media (min-width:990px) {
+  .instructorbg {
+    height: 300px;
+    position: relative;
+  }
+
+  .instructorprofile {
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 40px;
+    gap: 50px;
+    position: absolute;
+    bottom: -60px;
+    margin: 0;
+  }
+
+  .instructorimg {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .ratingName {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .starDiv {
+    justify-content: start;
+  }
+
+  .ratingDiv {
+    position: absolute;
+    right: 0;
+    display: flex;
+    text-align: left;
+    gap: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 60px;
+    padding-bottom: 40px;
+    color: white;
+  }
+
+  .instructorCourseName {
+    padding-bottom: 50px;
+    text-align: left;
+  }
+
+  .instructorCourseName h3 {
+    font-size: 40px; 
+    color: #FFFFFF;
+  }
+
+  .instructorCourseName span {
+    color:#FFFFFF;
+  }
+
+  .specilization {
+    display: block;
+  }
+
+  .bioCourseWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bioCourses {
+    width: calc(100% - 278px);
+    border: 1px solid #DDD8F9;
+    border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 30px;  
+    margin-top: 72px;
+  }
+
+}
+
+@media (min-width:1220px) {
+    .CourseBox {
+    width: 33.33%;
+  }
+}

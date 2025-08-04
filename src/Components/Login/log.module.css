@@ -1,0 +1,7 @@
+@media (max-width: 416px) {
+  .register {
+    display: flex;
+    justify-content: center;
+}
+}
+

@@ -1,0 +1,54 @@
+.controlsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  border-radius: 50%;
+  color: #7e57ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.arrow:hover {
+  cursor: pointer;
+}
+
+.dots {
+  margin-top: 8px;
+}
+
+@media (max-width: 766px) {
+  .arrow {
+    display: none !important;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+  background: #553cdf;
+}

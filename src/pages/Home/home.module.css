@@ -1,0 +1,302 @@
+@media (max-width:1438px) {
+  .trustContainer {
+    padding: 0px;
+  }
+}
+
+.jumpAnimation {
+  animation: jump-1 15s linear infinite;
+}
+
+@keyframes jump-1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  40% {
+    transform: translate3d(0, 20px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
+
+@media (max-width:361px) {
+  .boxTxt {
+    font-size: 13px;
+    gap: 10px;
+  }
+}
+
+@media (max-width:880px) and (min-width:768px) {
+  .jumpAnimation {
+    left: 500px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .capimg {
+    top: 450px;
+  }
+
+  .starimg {
+    top: 310px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .paddingpara {
+    padding-right: 150px;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .rightcontent {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width:1200px) {
+  .capimg {
+    left: 800px !important;
+  }
+
+  .starimg {
+    left: 661px;
+    top: 340px;
+  }
+}
+
+
+@media (min-width:1200px) {
+  .capimg {
+    left: 965px;
+    top: 600px;
+  }
+
+  .starimg {
+    top: 440px;
+  }
+
+
+
+  .rightContentcontainer {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  .title {
+    font-size: 60px;
+  }
+
+  .line {
+    left: 310px;
+    top: 388px;
+  }
+}
+
+@media (min-width:1366px) {
+  .capimg {
+    left: 1217px;
+    top: 505px;
+  }
+
+  .starimg {
+    left: 661px;
+    top: 280px;
+  }
+
+  .rightcontent {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .allcoursesMain {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .threeimg {
+    width: 50%;
+  }
+
+  .line {
+    left: 307px;
+    top: 322px;
+  }
+}
+
+
+.rotateImg {
+  animation: rotation infinite 14s linear;
+}
+
+@media (min-width:880px) {
+  .rotateDiv {
+    left: 23%;
+    top: 60%;
+  }
+}
+
+@media (min-width:1024px) {
+  .rotateDiv {
+    top: 35%;
+  }
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 330px) {
+  .Straightgrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.borderHover:hover {
+  border: 1px solid white;
+}
+
+@media (max-width:574px) {
+  .homeCourseCard {
+    width: 100%;
+  }
+
+  .homeCourseCard img {
+  height: auto;
+  }
+}
+
+@media (min-width:992px) {
+  .homeCourseCard {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width:1200px) {
+  .courseSection {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .homeCourseCard {
+    width: 25%;
+  }
+}
+
+.controlsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 999;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media (max-width: 766px) {
+  .arrow {
+    display: none !important;
+  }
+}
+
+
+
+.eventImg {
+  width: 100%;
+}
+
+.eventImg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Styles from 990px and above */
+@media (min-width: 990px) {
+  .eventBox {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .eventTop {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .eventImg {
+    width: 30%;
+    flex-shrink: 0;  
+    flex-grow: 0;      
+    flex-basis: 30%;  
+    min-width: 250px;  
+  }
+
+  .eventImg img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .eventTop h4 {
+    font-size: 24px;
+  }
+
+  .eventTop ul {
+    flex-direction: row;
+  }
+
+  .eventTop ul li {
+    margin-right: 18px;
+  }
+
+  .eventBtn {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .eventBtn a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-direction: row !important;
+    white-space: nowrap;
+  }
+}

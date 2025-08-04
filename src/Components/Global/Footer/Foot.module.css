@@ -1,0 +1,26 @@
+@media (max-width: 1034px) and (min-width: 765px) {
+  .divParent {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .logoFooter , .userFullLink , .newsLetter , .Explore {
+    width: 48%;
+  }
+}
+
+@media (max-width:765px) {
+  .divParent {
+    flex-wrap: wrap;
+    gap: 38px;
+  }
+   .logoFooter , .userFullLink , .newsLetter , .Explore {
+    width: 100%;
+  }
+}
+
+@media (max-width:300px) {
+  .viewAllBtn {
+    margin-right: 0;
+  }
+}
