@@ -97,12 +97,12 @@ const Courses = () => {
       setLoading(true);
       await axios.delete(`${API_URL}/deleteCourse/${courseId}`);
       showNotification('Course deleted successfully', 'success');
-      fetchCourses(); // Refresh the list
+      fetchCourses(); 
     } catch (error) {
       showNotification(error.response?.data?.message || 'Failed to delete course', 'error');
     } finally {
       setLoading(false);
-      setCourseToDelete(null); // Close modal
+      setCourseToDelete(null);
     }
   };
 

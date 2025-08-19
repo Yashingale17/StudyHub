@@ -64,7 +64,6 @@ const AddContent = () => {
 
           {/* Form Container */}
           <div className="px-6 py-8 md:px-10">
-            {/* Error Message */}
             {error && (
               <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-lg flex items-start">
                 <div className="flex-shrink-0">
@@ -88,7 +87,6 @@ const AddContent = () => {
               </div>
             )}
 
-            {/* Success Message */}
             {success && (
               <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-lg flex items-start">
                 <div className="flex-shrink-0">

@@ -25,8 +25,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const CourseContentTable = () => {
   const dispatch = useDispatch();
   const { courses, isLoading, error } = useSelector((state) => state.admincoursecontent);
-  
-  // State variables
   const [selectedCourseId, setSelectedCourseId] = useState('');
   const [filteredContents, setFilteredContents] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,12 +34,10 @@ const CourseContentTable = () => {
   const [contentToDelete, setContentToDelete] = useState(null);
   const [contentToEdit, setContentToEdit] = useState(null);
   
-  // Modal states
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   
-  // Form state for editing
   const [editFormData, setEditFormData] = useState({
     title: '',
     duration: '',
@@ -51,16 +47,14 @@ const CourseContentTable = () => {
     videoUrl: ''
   });
 
-  // Validation functions
   const validateTitle = (title) => title.length >= 5 && title.length <= 100;
   const validateAboutLessons = (about) => about.length >= 20 && about.length <= 1000;
 
-  // Fetch courses on mount and when operations complete
+
   useEffect(() => {
     dispatch(fetchCourses());
   }, [dispatch]);
 
-  // Filter contents based on selected course
   useEffect(() => {
     if (selectedCourseId) {
       const selectedCourse = courses.find(course => course.id === parseInt(selectedCourseId));
@@ -80,7 +74,6 @@ const CourseContentTable = () => {
     setCurrentPage(1);
   }, [selectedCourseId, courses]);
 
-  // Show error toasts
   useEffect(() => {
     if (error) {
       toast.error(error, {
@@ -95,34 +88,30 @@ const CourseContentTable = () => {
     }
   }, [error, dispatch]);
 
-  // Handle search
   const handleSearch = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
     setCurrentPage(1);
   };
 
-  // Filter data based on search term
   const filteredData = filteredContents.filter(content => 
     content.title.toLowerCase().includes(searchTerm) ||
     (content.courseTitle && content.courseTitle.toLowerCase().includes(searchTerm))
   );
 
-  // Pagination logic
+
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // View content details
+
   const handleView = (content) => {
     setSelectedContent(content);
     setIsViewModalOpen(true);
   };
 
-  // Prepare content for editing
   const handleEdit = (content) => {
     setContentToEdit(content);
     setEditFormData({
@@ -136,13 +125,11 @@ const CourseContentTable = () => {
     setIsEditModalOpen(true);
   };
 
-  // Handle delete click
   const handleDeleteClick = (content) => {
     setContentToDelete(content);
     setIsDeleteModalOpen(true);
   };
 
-  // Confirm delete
   const confirmDelete = () => {
     if (contentToDelete) {
       dispatch(deleteCourseContent({
@@ -161,7 +148,7 @@ const CourseContentTable = () => {
     }
   };
 
-  // Handle form input changes
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setEditFormData(prev => ({
@@ -170,7 +157,7 @@ const CourseContentTable = () => {
     }));
   };
 
-  // Submit edited content
+
   const handleEditSubmit = (e) => {
     e.preventDefault();
     
@@ -200,7 +187,6 @@ const CourseContentTable = () => {
     }
   };
 
-  // Close all modals
   const closeModal = () => {
     setIsViewModalOpen(false);
     setIsDeleteModalOpen(false);
@@ -210,7 +196,6 @@ const CourseContentTable = () => {
     setContentToEdit(null);
   };
 
-  // Generate visible page numbers for pagination
   const getVisiblePages = () => {
     const visiblePages = [];
     const maxVisible = 5;
@@ -237,7 +222,6 @@ const CourseContentTable = () => {
           <p className="text-gray-600">Manage all course lessons and materials</p>
         </div>
 
-        {/* Filter and Search Section */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
             <div className="w-full md:w-1/3">
@@ -391,7 +375,6 @@ const CourseContentTable = () => {
                 <FiChevronLeft className="mr-1" /> Previous
               </button>
               
-              {/* Show first page if not in visible range */}
               {getVisiblePages()[0] > 1 && (
                 <>
                   <button
@@ -410,7 +393,7 @@ const CourseContentTable = () => {
                 </>
               )}
               
-              {/* Visible page numbers */}
+       
               {getVisiblePages().map((number) => (
                 <button
                   key={number}
@@ -425,7 +408,7 @@ const CourseContentTable = () => {
                 </button>
               ))}
               
-              {/* Show last page if not in visible range */}
+
               {getVisiblePages()[getVisiblePages().length - 1] < totalPages && (
                 <>
                   {getVisiblePages()[getVisiblePages().length - 1] < totalPages - 1 && (
@@ -556,7 +539,6 @@ const CourseContentTable = () => {
         </div>
       )}
 
-      {/* Delete Confirmation Modal */}
       {isDeleteModalOpen && contentToDelete && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
@@ -603,7 +585,6 @@ const CourseContentTable = () => {
         </div>
       )}
 
-      {/* Edit Modal */}
       {isEditModalOpen && contentToEdit && (
         <div className="fixed inset-0 backdrop-blur bg-white/15 bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
@@ -724,7 +705,6 @@ const CourseContentTable = () => {
         </div>
       )}
 
-      {/* Toast Container */}
       <ToastContainer
         position="top-right"
         autoClose={5000}

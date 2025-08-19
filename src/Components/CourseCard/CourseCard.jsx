@@ -45,7 +45,6 @@ const handleWishlistClick = async (e) => {
       toast.success("Added to wishlist");
     }
 
-    // ✅ Refetch the updated wishlist to keep Redux in sync
     await dispatch(fetchWishlist());
   } catch (error) {
     console.error("Error updating wishlist:", error);

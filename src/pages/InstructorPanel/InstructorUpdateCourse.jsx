@@ -287,7 +287,7 @@ const InstructorUpdateCourse = () => {
         tags: Array.isArray(selectedCourse.tags) ? selectedCourse.tags.join(', ') : selectedCourse.tags || "",
         thumbnail: selectedCourse.thumbnail,
         introVideo: selectedCourse.introVideo,
-        discountPercentage: selectedCourse.discountPercentage || 0, // Make sure this is preserved
+        discountPercentage: selectedCourse.discountPercentage || 0, 
       });
 
       setPreviewImage(selectedCourse.thumbnail

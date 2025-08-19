@@ -110,7 +110,6 @@ const UpdateCourseContetinst = () => {
     label: course.title,
   }));
 
-  // Handler
   const handleCourseChange = (selectedOption) => {
     setSelectedCourseId(selectedOption ? selectedOption.value : "");
   };
@@ -164,7 +163,6 @@ const UpdateCourseContetinst = () => {
       {initialValues && (
         <form onSubmit={formik.handleSubmit} className="grid gap-4 mt-4">
 
-          {/* Row 1: Title + Duration */}
           <div className="flex flex-col md:flex-row gap-4">
             <div className="w-full md:w-1/2">
               <label className="block mb-1 font-medium text-gray-700">Title</label>
@@ -190,7 +188,6 @@ const UpdateCourseContetinst = () => {
             </div>
           </div>
 
-          {/* Row 2: Video URL + Sequence */}
           <div className="flex flex-col md:flex-row gap-4">
             <div className="w-full md:w-1/2">
               <label className="block mb-1 font-medium text-gray-700">Video URL</label>
@@ -216,7 +213,7 @@ const UpdateCourseContetinst = () => {
             </div>
           </div>
 
-          {/* Row 3: About Lessons (full width) */}
+   
           <div>
             <label className="block mb-1 font-medium text-gray-700">About Lesson</label>
             <textarea
@@ -230,7 +227,7 @@ const UpdateCourseContetinst = () => {
             )}
           </div>
 
-          {/* Row 4: Is Preview Checkbox */}
+   
           <div className="flex items-center">
             <input
               name="isPreview"
@@ -242,7 +239,7 @@ const UpdateCourseContetinst = () => {
             <label className="text-gray-700">Is Preview?</label>
           </div>
 
-          {/* Submit Button */}
+
           <button
             type="submit"
             className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"

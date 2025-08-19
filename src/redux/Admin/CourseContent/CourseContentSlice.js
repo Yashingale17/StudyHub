@@ -99,11 +99,9 @@ const courseContentSlice = createSlice({
         state.error = null;
         state.success = false;
       })
-      // In the deleteCourseContent.fulfilled case
       .addCase(deleteCourseContent.fulfilled, (state, action) => {
         state.isLoading = false;
         state.success = true;
-        // Update to handle the new payload structure
         const { courseId, contentId } = action.payload;
         state.courses = state.courses.map(course => {
           if (course.id === courseId) {

@@ -163,7 +163,7 @@ const handleSubmit = async (e) => {
 
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Basic Information */}
+  
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
@@ -225,7 +225,6 @@ const handleSubmit = async (e) => {
                 </div>
               </div>
 
-              {/* Pricing and Details */}
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Price Type</label>

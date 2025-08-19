@@ -25,7 +25,6 @@ const UserDetailModal = ({ isOpen, onClose, user, userId }) => {
   return (
     <div className="fixed inset-0 backdrop-blur bg-white/30 bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        {/* Modal Header */}
         <div className="flex justify-between items-center border-b border-gray-200 p-4">
           <h3 className="text-lg font-semibold text-gray-800">User Details</h3>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-500">
@@ -35,10 +34,8 @@ const UserDetailModal = ({ isOpen, onClose, user, userId }) => {
 
         {/* Modal Body */}
         <div className="p-6">
-          <div className="flex flex-col gap-6">
-            {/* User Profile Section */}
+          <div className="flex flex-col gap-6">     
             <div className="flex flex-col md:flex-row gap-6">
-              {/* User Profile Image */}
               <div className="flex flex-col items-center">
                 <div className="relative mb-4">
                   <img
@@ -57,7 +54,6 @@ const UserDetailModal = ({ isOpen, onClose, user, userId }) => {
                 </div>
               </div>
 
-              {/* User Details Grid */}
               <div className="flex-1">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-gray-50 p-4 rounded-lg">
@@ -122,7 +118,7 @@ const UserDetailModal = ({ isOpen, onClose, user, userId }) => {
               </div>
             </div>
 
-            {/* Enrolled Courses Section */}
+
             <div className="mt-6">
               <h3 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                 <BookOpen className="mr-2" /> Enrolled Courses ({enrolledCourses.length})
@@ -154,7 +150,6 @@ const UserDetailModal = ({ isOpen, onClose, user, userId }) => {
           </div>
         </div>
 
-        {/* Modal Footer */}
         <div className="flex justify-end border-t border-gray-200 p-4">
           <button
             onClick={onClose}

@@ -61,7 +61,6 @@ const FilterSidebar = ({
     return () => clearTimeout(timeout);
   }, [searchInput]);
 
-  // NEW CODE (replace with this):
   const clearAllFilters = () => {
     setSelectedCategories([]);
     setSelectedTags([]);
@@ -75,12 +74,10 @@ const FilterSidebar = ({
       level: [],
       price: [],
     });
-    // Clear URL parameters
     navigate(window.location.pathname, { replace: true });
     if (onClearFiltersDone) onClearFiltersDone();
   };
 
-  // ⬜ Generic checkbox handler
   const handleCheckboxChange = (value, selected, setter) => {
     if (selected.includes(value)) {
       setter(selected.filter(v => v !== value));
@@ -91,7 +88,7 @@ const FilterSidebar = ({
 
   return (
     <div>
-      {/* 🔍 Search */}
+      {/* Search */}
       <div className='mb-[25px] pb-[40px] border-b border-[#EBEBEB]'>
         <h3 className='font-hind text-[18px] font-medium mb-5'>Search</h3>
         <div className='flex relative'>
@@ -108,7 +105,7 @@ const FilterSidebar = ({
         </div>
       </div>
 
-      {/* 📂 Category */}
+      {/* Category */}
       <FilterSection title="Category" data={categories} loading={loading} error={error}>
         {categories.map(cat => (
           <Checkbox
@@ -123,7 +120,7 @@ const FilterSidebar = ({
         ))}
       </FilterSection>
 
-      {/* 🏷️ Tags */}
+      {/* Tags */}
       <FilterSection title="Tags" data={tags} loading={loading} error={error}>
         {tags.map(tag => (
           <Checkbox
@@ -138,7 +135,7 @@ const FilterSidebar = ({
         ))}
       </FilterSection>
 
-      {/* 📈 Level */}
+      {/* Level */}
       <FilterSection title="Level" data={levels} loading={loading} error={error}>
         {levels.map(level => (
           <Checkbox
@@ -153,7 +150,7 @@ const FilterSidebar = ({
         ))}
       </FilterSection>
 
-      {/* 💰 Price */}
+      {/*  Price */}
       <FilterSection title="Price" data={prices} loading={loading} error={error}>
         {prices.map(price => (
           <Checkbox
@@ -168,7 +165,7 @@ const FilterSidebar = ({
         ))}
       </FilterSection>
 
-      {/* ❌ Clear All */}
+      {/*  Clear All */}
       <div className="mt-2 flex justify-center">
         <button
           onClick={clearAllFilters}
@@ -184,7 +181,7 @@ const FilterSidebar = ({
 
 export default FilterSidebar;
 
-// 🧩 Filter Section Wrapper
+//  Filter Section Wrapper
 const FilterSection = ({ title, data, loading, error, children }) => (
   <div className='mb-[25px] pb-[40px] border-b border-b-[#EBEBEB]'>
     <h3 className='font-hind text-[18px] font-medium mb-5'>{title}</h3>
@@ -196,7 +193,7 @@ const FilterSection = ({ title, data, loading, error, children }) => (
   </div>
 );
 
-// ✅ Checkbox
+//  Checkbox
 const Checkbox = ({ label, value, checked, onChange }) => (
   <li>
     <label className='flex items-center font-inter text-[16px] text-[#110C2D]'>

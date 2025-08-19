@@ -1,4 +1,4 @@
-// src/pages/Admin/AdminLayout.jsx
+
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
@@ -9,12 +9,10 @@ const AdminLayout = () => {
 
   return (
     <div className="flex h-screen overflow-hidden">
-      {/* Sidebar for Desktop */}
       <div className="hidden md:block w-64 h-full">
         <Sidebar />
       </div>
 
-      {/* Sidebar for Mobile */}
       {sidebarOpen && (
         <div className="fixed inset-0 z-40 flex">
           <div className="relative w-64 h-full bg-white shadow-lg transform animate-slideIn transition-transform duration-300 ease-out">
@@ -33,9 +31,7 @@ const AdminLayout = () => {
         </div>
       )}
 
-      {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto p-4 bg-gray-100">
-        {/* Mobile Menu Button */}
         <div className="md:hidden mb-4">
           <button
             onClick={() => setSidebarOpen(true)}
@@ -45,7 +41,6 @@ const AdminLayout = () => {
           </button>
         </div>
 
-        {/* Routed Admin Page */}
         <Outlet />
       </div>
     </div>

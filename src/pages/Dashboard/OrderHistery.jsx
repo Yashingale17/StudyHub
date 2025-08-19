@@ -12,7 +12,7 @@ const OrderHistory = () => {
     dispatch(fetchUserEnrollments());
   }, [dispatch]);
 
-  // Filter courses where paid === true or price > 0
+ 
   const paidCourses = enrollments?.enrolled?.filter(course => course.paid || course.price > 0) || [];
 
   return (
@@ -20,10 +20,8 @@ const OrderHistory = () => {
       <div className="p-[30px] mb-[60px] border border-[#DDD8F9] rounded-sm">
         <h2 className="text-2xl font-bold mb-6 text-[#110C2D]">Order History</h2>
 
-        {/* Loader */}
         {loading && <Loader />}
 
-        {/* Paid Courses List */}
         {!loading && paidCourses.length > 0 ? (
           <div className="flex flex-wrap -mx-[13.5px]">
             {paidCourses.map(course => (

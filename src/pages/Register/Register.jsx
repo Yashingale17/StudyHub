@@ -190,7 +190,7 @@ const Register = () => {
             </p>
           </div>
 
-          {/* Submit Button */}
+
           <button
             type="submit"
             disabled={formik.isSubmitting}
@@ -199,7 +199,6 @@ const Register = () => {
             {formik.isSubmitting ? 'Registering...' : 'Register'}
           </button>
 
-          {/* Login Redirect */}
           <div className="mt-5 text-[#41454F] text-center leading-[1.9] text-[17px]">
             Already have an account?{' '}
             <a href="/login" className={`txt-color text-inherit cursor-pointer font-medium ${style.register}`}>

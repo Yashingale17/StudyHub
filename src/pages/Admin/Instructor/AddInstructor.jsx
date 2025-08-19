@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { UserPlus, XCircle } from "lucide-react";
 import * as Yup from "yup";
-import FormField from "../../../Components/Formfield"; // adjust the path as needed
+import FormField from "../../../Components/Formfield";
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string().required("First name is required"),
@@ -76,7 +76,6 @@ const AddInstructor = () => {
         return;
       }
 
-      // Submit form
       const instructorForm = new FormData();
       Object.entries(formData).forEach(([key, value]) => instructorForm.append(key, value));
       instructorForm.append("image", image);
@@ -96,7 +95,6 @@ const AddInstructor = () => {
 
     } catch (err) {
       if (err.name === "ValidationError") {
-        // Collect all Yup validation errors
         const newErrors = {};
         err.inner.forEach((error) => {
           newErrors[error.path] = error.message;
@@ -176,7 +174,7 @@ const AddInstructor = () => {
             {errors.bio && <p className="text-sm text-red-500">{errors.bio}</p>}
           </div>
 
-          {/* Submit Button */}
+
           <div className="flex justify-end">
             <button
               type="submit"

@@ -70,7 +70,6 @@ const Cart = () => {
     }
   };
 
-  // Loading skeleton for smoother transition
   if (loading || totalPriceLoading) return (
     <div className="min-h-screen">
       <div className='mt-[79px] md:mt-[77px] lg:mt-[117px]'>

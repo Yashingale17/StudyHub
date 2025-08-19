@@ -19,7 +19,6 @@ const CheckOut = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  // Form state
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -35,7 +34,7 @@ const CheckOut = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isProcessing, setIsProcessing] = useState(false);
 
-  // Cart data
+
   const { loading, error, totalPriceLoading, subTotal, grandTotal, items: cartItems = [] } = useSelector(state => state.cart);
 
   useEffect(() => {
@@ -53,7 +52,7 @@ const CheckOut = () => {
       ...formData,
       [name]: value
     });
-    // Clear error when user starts typing
+
     if (formErrors[name]) {
       setFormErrors({
         ...formErrors,
@@ -72,12 +71,10 @@ const CheckOut = () => {
       }
     });
 
-    // Email validation
     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errors.email = 'Please enter a valid email';
     }
 
-    // Phone validation
     if (formData.phone && !/^[0-9]{10,15}$/.test(formData.phone)) {
       errors.phone = 'Please enter a valid phone number';
     }
@@ -127,7 +124,7 @@ const CheckOut = () => {
     }
   };
 
-  // Loading state
+
   if (loading) {
     return (
       <div>
@@ -144,7 +141,6 @@ const CheckOut = () => {
     );
   }
 
-  // Error state
   if (error) {
     return (
       <div>
@@ -166,7 +162,7 @@ const CheckOut = () => {
     );
   }
 
-  // Empty cart state
+
   if (cartItems.length === 0) {
     return (
       <div>

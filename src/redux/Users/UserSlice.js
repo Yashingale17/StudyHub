@@ -78,7 +78,7 @@ const userSlice = createSlice({
         state.error = action.payload;
       })
 
-      // Courses
+
       .addCase(fetchCourses.pending, (state) => {
         state.loading = true;
         state.error = null;

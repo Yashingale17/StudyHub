@@ -77,7 +77,7 @@ const AdminDashboard = () => {
       ).toFixed(1)
     : 0;
 
-  const revenueGrowth = 8.5; // This would typically come from your API
+  const revenueGrowth = 8.5;
 
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -236,9 +236,7 @@ const AdminDashboard = () => {
           />
         </div>
 
-        {/* Main Content Area */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          {/* Enrollment Chart */}
           <div className="bg-white p-6  rounded-xl shadow-sm border border-gray-200 lg:col-span-2">
             <div className="flex justify-between items-center mb-6">
               <div>
@@ -364,9 +362,7 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* Recent Activity Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Recent Users Table */}
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 lg:col-span-2">
             <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
               <h2 className="text-lg font-semibold text-gray-800">Recent Users</h2>
@@ -461,7 +457,6 @@ const AdminDashboard = () => {
             </div>
           </div>
 
-          {/* Quick Actions & System Status */}
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
               <h3 className="font-semibold text-gray-800 mb-4">Quick Actions</h3>

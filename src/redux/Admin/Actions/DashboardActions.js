@@ -35,7 +35,6 @@ export const fetchFiveUsers = createAsyncThunk(
         },
       });
 
-      // Filter by role === "USER" then take first 5
       const userOnly = res.data.filter(user => user.role === "USER").slice(0, 5);
 
       return userOnly;
@@ -96,7 +95,6 @@ export const reactiveInstructor = createAsyncThunk(
           },
         }
       );
-      // Return both id and the updated instructor data
       return { id, instructor: res.data };
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response?.data || "Reactivation failed");
@@ -228,7 +226,6 @@ export const updateInstructor = createAsyncThunk(
       return response.data;
     } catch (error) {
       if (error.response?.data?.errors) {
-        // Handle field-specific validation errors
         return thunkAPI.rejectWithValue(error.response.data.errors);
       }
       return thunkAPI.rejectWithValue(

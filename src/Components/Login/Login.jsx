@@ -57,7 +57,7 @@ const handleSubmit = async (e) => {
 
      toast.success("Login success", {
           autoClose: 2000,
-          position: "top-right" // More visible position
+          position: "top-right"
         });
 
     if (role === "ADMIN") {

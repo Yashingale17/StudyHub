@@ -1,4 +1,4 @@
-// src/components/Admin/Sidebar.jsx
+
 import React, { useState } from "react";
 import {
   LayoutDashboard,
@@ -38,7 +38,6 @@ const Sidebar = () => {
   };
 
 
-  // Admin name
   let adminName = "Admin";
   try {
     const userData = JSON.parse(localStorage.getItem("user"));
@@ -51,10 +50,8 @@ const Sidebar = () => {
 
   return (
     <div className="bg-white shadow-md w-full p-4 flex flex-col h-full">
-      {/* Branding */}
       <div className="text-2xl font-bold text-blue-600 mb-8">StudyHub Admin</div>
 
-      {/* Admin Info */}
       <div className="flex items-center gap-3 bg-gray-100 rounded-lg p-3 mb-6 shadow-sm">
         <div className="bg-blue-100 text-blue-700 p-2 rounded-full">
           <User size={20} />
@@ -65,12 +62,10 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {/* Navigation */}
       <nav className="flex flex-col gap-2">
         <DashboardLinkItems to="/admin/dashboard" icon={<LayoutDashboard />} label="Dashboard" />
         <DashboardLinkItems to="/admin/users" icon={<Users />} label="Users" />
 
-        {/* Instructors Dropdown */}
         <button
           onClick={() => setShowInstructorsSubMenu(!showInstructorsSubMenu)}
           className={`flex items-center justify-between px-4 py-2 text-sm font-medium rounded-md ${location.pathname.startsWith("/admin/instructors")
@@ -192,7 +187,6 @@ const Sidebar = () => {
         )}
       </nav>
 
-      {/* Logout */}
       <div onClick={handleLogout} className="absolute bottom-6 w-56">
         <button className="flex items-center gap-2 text-red-600 hover:text-red-800 text-sm">
           <LogOut size={18} />

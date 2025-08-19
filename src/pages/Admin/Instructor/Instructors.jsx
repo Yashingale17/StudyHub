@@ -59,7 +59,6 @@ const Instructors = () => {
   const handleViewInstructor = async (id) => {
     try {
       setIsViewModalOpen(true);
-      // Fetch both instructor details and courses in parallel
       await Promise.all([
         dispatch(fetchInstructorById(id)),
         dispatch(fetchCoursesByInstructor(id))
@@ -96,10 +95,8 @@ const Instructors = () => {
     try {
       setDeletingId(id);
       await dispatch(reactiveInstructor(id)).unwrap();
-      // No need for toast here since it's handled in the slice
     } catch (error) {
       console.error("Reactivation error:", error);
-      // No need for toast here since it's handled in the slice
     } finally {
       setDeletingId(null);
     }
@@ -258,7 +255,6 @@ const Instructors = () => {
     }
   };
 
-  // Helper function to scroll to first error field
   const scrollToFirstError = (errorObj) => {
     const firstErrorField = Object.keys(errorObj)[0];
     if (firstErrorField) {
@@ -269,12 +265,10 @@ const Instructors = () => {
     }
   };
 
-  // Helper function to handle backend errors
+
   const handleBackendErrors = (resultAction) => {
     if (resultAction.payload) {
       const backendErrors = resultAction.payload;
-
-      // Merge backend errors with existing errors (in case frontend missed something)
       setErrors(prev => ({
         ...prev,
         ...backendErrors

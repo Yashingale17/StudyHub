@@ -34,22 +34,19 @@ const AddCourses = () => {
     try {
       const urlObj = new URL(cleanedUrl);
       
-      // Handle youtu.be links
       if (urlObj.hostname === 'youtu.be') {
         const videoId = urlObj.pathname.slice(1);
         return `https://www.youtube.com/embed/${videoId}`;
       }
       
-      // Handle youtube.com links
+
       if (['www.youtube.com', 'youtube.com'].includes(urlObj.hostname)) {
-        // Handle watch URLs
         if (urlObj.pathname === '/watch') {
           const videoId = urlObj.searchParams.get('v');
           if (videoId) {
             return `https://www.youtube.com/embed/${videoId}`;
           }
         }
-        // Handle embed URLs
         if (urlObj.pathname.startsWith('/embed/')) {
           return cleanedUrl;
         }

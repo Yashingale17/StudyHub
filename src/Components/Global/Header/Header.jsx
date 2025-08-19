@@ -48,7 +48,6 @@ const cartCount = useSelector((state) => state.cart.items?.length) || 0;
   }, []);
 
   useEffect(() => {
-    // Check for admin user in localStorage
     const userData = JSON.parse(localStorage.getItem("user"));
     const adminStatus = userData?.role === "ADMIN";
     setIsAdmin(adminStatus);

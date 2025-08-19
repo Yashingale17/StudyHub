@@ -245,7 +245,6 @@ const AddCourseContentInst = () => {
             </button>
           </div>
 
-          {/* General error from backend */}
           {contentError && <p className="text-red-500 text-sm">{contentError}</p>}
         </form>
       )}

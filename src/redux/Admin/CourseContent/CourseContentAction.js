@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:8080/api/admin';
 
-// Configure axios instance
 const adminApi = axios.create({
   baseURL: API_URL,
   headers: {
@@ -11,7 +10,6 @@ const adminApi = axios.create({
   }
 });
 
-// Add auth token interceptor
 adminApi.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -20,7 +18,6 @@ adminApi.interceptors.request.use(config => {
   return config;
 });
 
-// Fetch all courses for dropdown
 export const fetchCourses = createAsyncThunk(
   'courseContent/fetchCourses',
   async (_, { rejectWithValue }) => {
@@ -33,7 +30,6 @@ export const fetchCourses = createAsyncThunk(
   }
 );
 
-// Add content to selected course
 export const addCourseContent = createAsyncThunk(
   'courseContent/addCourseContent',
   async (contentData, { rejectWithValue }) => {
@@ -51,7 +47,6 @@ export const addCourseContent = createAsyncThunk(
   }
 );
 
-// Get single course content
 export const getCourseContent = createAsyncThunk(
   'courseContent/getCourseContent',
   async (id, { rejectWithValue }) => {
@@ -64,13 +59,13 @@ export const getCourseContent = createAsyncThunk(
   }
 );
 
-// Update the deleteCourseContent action to match your API endpoint
+
 export const deleteCourseContent = createAsyncThunk(
   'courseContent/deleteCourseContent',
   async ({ courseId, contentId }, { rejectWithValue }) => {
     try {
       await adminApi.delete(`/courseContent/${contentId}`, {
-        data: { courseId } // Send courseId in the request body if needed
+        data: { courseId } 
       });
       return { courseId, contentId };
     } catch (error) {
@@ -79,7 +74,6 @@ export const deleteCourseContent = createAsyncThunk(
   }
 );
 
-// Update the updateCourseContent action
 export const updateCourseContent = createAsyncThunk(
   'courseContent/updateCourseContent',
   async ({ contentId, contentData }, { rejectWithValue }) => {
